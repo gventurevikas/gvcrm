@@ -1,0 +1,12 @@
+# Public HTML showcase website (local / deploy separately — do not commit)
+html/
+
+# Local engineering / architecture docs (not committed)
+docs/dev-docs/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
