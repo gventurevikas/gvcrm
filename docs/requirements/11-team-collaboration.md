@@ -28,6 +28,7 @@ Help sales teams **work together inside the CRM**: share updates in a feed, ment
 - Full Slack replacement for the whole company — private chat is CRM-contextual
 - Document repository ACLs — Documents Management (feed can share links/files)
 - Gamification points for likes/comments — Sales Performance consumes events from here
+- System AI / ChatGPT-mini central chat for business operations — AI Assistant and Central Chat (this module is human collaboration only)
 
 ## 3. Users
 
@@ -277,6 +278,7 @@ As an admin, I want a “West Enterprise AEs” group to share a set of accounts
 | Sales Performance | Gamification events from likes/comments/posts |
 | Workflows | Auto-tag actions |
 | Marketplace | Chat/feed connector apps |
+| AI Assistant and Central Chat | Distinct from private chat; assistant may add tags or @mentions on the user’s behalf |
 
 ## 11. Traceability
 

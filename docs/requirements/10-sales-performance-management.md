@@ -10,15 +10,15 @@
 
 ## 1. Purpose
 
-Drive **quota attainment and predictable revenue** through goals/targets, forecasting, sales campaigns, KPI visualization, and optional gamification that keeps teams engaged.
+Drive **quota attainment and predictable revenue** through goals/targets, forecasting, sales campaigns (including **Meta and LinkedIn**), KPI visualization, and **complete gamification** — especially **published daily, weekly, and monthly leaderboards** for remote US insurance sales teams.
 
 ## 2. Scope
 
 **In scope**
 
-- Gamification (badges, trophies, points, leaderboards)
+- Complete gamification: points, badges, trophies, streaks, and **daily / weekly / monthly leaderboards**
 - Goals management (user/team, time-bound)
-- Sales campaigns (multi-type) with effectiveness analytics
+- Sales campaigns (multi-type) including Meta and LinkedIn ads, with effectiveness analytics
 - Sales forecasting (target vs actual vs forecast; scenarios)
 - Target achievement visualization across KPIs and org levels
 
@@ -27,15 +27,16 @@ Drive **quota attainment and predictable revenue** through goals/targets, foreca
 - Building email/SMS execution engines — Customer Communication
 - Pipeline stage design — Opportunities / Deals
 - Report rendering engine — Dashboards and Reports (this module defines metrics; DAR visualizes)
+- Real-time Meta/LinkedIn lead ingest mechanics — Leads Management (this module owns campaign objects and ROI)
 
 ## 3. Users
 
 | Persona | Typical actions |
 |---------|-----------------|
-| Sales representative | See my quota, forecast my deals, run/participate in campaigns, earn badges |
-| Sales manager | Set team targets, inspect forecast roll-up, campaign ROI |
-| RevOps / sales ops | KPI definitions, forecast categories, campaign types |
-| Enablement | Gamification rules |
+| Remote producer / sales representative | See my quota, today’s rank, forecast, campaigns, badges |
+| Sales manager / agency principal | Team targets, D/W/M leaderboards, campaign ROI (Meta/LinkedIn) |
+| RevOps / sales ops | KPI definitions, forecast categories, campaign types, leaderboard publish |
+| Enablement | Gamification rules, badges, seasons |
 | Executive | Company vs team vs individual attainment |
 
 ## 4. Business objectives
@@ -43,7 +44,8 @@ Drive **quota attainment and predictable revenue** through goals/targets, foreca
 - Clear quotas at company, team, and individual levels
 - Credible forecast (best / likely / worst)
 - Measurable campaign effectiveness
-- Healthy competition without shadow spreadsheets
+- Healthy competition for **remote agents** via published D/W/M leaderboards (no office whiteboard required)
+- Clear ROI on Meta and LinkedIn lead campaigns
 
 ---
 
@@ -150,13 +152,14 @@ As a sales manager, I want a webinar campaign with members, activities, and ROI 
 
 **Detailed requirements**
 
-1. Campaign object: name, type (email, telephonic, referral, advertisement, webinar, social, other), dates, status, owner, budget/cost, target KPI, description.
-2. Members: leads, contacts, accounts (add from lists, reports, manual, import).
+1. Campaign object: name, type (email, telephonic, referral, advertisement, webinar, social, **Meta ads**, **LinkedIn ads**, other), dates, status, owner, budget/cost, target KPI, description.
+2. Members: leads, contacts, accounts (add from lists, reports, manual, import, or auto from Meta/LinkedIn ingest).
 3. Member statuses: sent, responded, attended, converted, etc. (type-specific).
-4. Execution hooks: mass email, call lists, SMS (Communication module); not all types auto-execute (ads/social may be tracking-only).
+4. Execution hooks: mass email, call lists, SMS (Communication module); Meta/LinkedIn campaigns receive members in real time from Leads ingest.
 5. Influence: related opportunities (primary campaign source + multi-touch influence P1).
-6. Statistics: members, responses, conversion, pipeline created, revenue won, cost, ROI.
+6. Statistics: members, responses, conversion, pipeline created, revenue/premium won, cost, ROI — breakable by Meta vs LinkedIn vs other.
 7. Hierarchy: parent/child campaigns (P1).
+8. Map external Meta Ad / LinkedIn Campaign ids to the CRM campaign for attribution.
 
 **Acceptance criteria**
 
@@ -164,34 +167,72 @@ As a sales manager, I want a webinar campaign with members, activities, and ROI 
 - Email campaign can trigger mass email to members with consent checks.
 - Report shows conversion % and revenue attributed for the date range.
 - Telephonic campaign can generate a call list for members without email.
+- A Meta or LinkedIn campaign shows members created from real-time ad leads and conversion/ROI.
 
 ---
 
-### 5.5 Gamification
+### 5.5 Complete gamification
 
 **Source capability:** Gamification  
-**Priority:** P2  
+**Priority:** P0  
 **ID:** SPM-FR-005
 
-The solution shall allow configuring milestone-based badges, trophies, points, or leaderboards to encourage healthy competition to achieve sales targets and to increase engagement activities such as posting, sharing, commenting, and liking.
+The solution shall provide **complete gamification** of sales work: configurable points, milestone badges, trophies, streaks, challenges, and leaderboards so remote insurance producers stay engaged without an office floor.
 
 **User story**  
-As enablement, I want points for closed-won and for feed engagement, with a monthly leaderboard and badges at milestones.
+As an agency principal, I want producers competing on quotes, binds, and speed-to-lead with badges and points, not only a static quota number.
 
 **Detailed requirements**
 
-1. Configurable point rules: sales outcomes (won deal, quota hit) and collaboration events (post, share, comment, like from Team Collaboration).
-2. Badges/trophies on milestones (first win, 10 activities in a week, 100% quota).
-3. Leaderboards: period, team or org, metric (points, revenue, activities); privacy controls.
-4. Opt-out of public leaderboards per user if policy requires.
-5. Admin can pause gamification.
+1. Point rules: sales outcomes (quote issued, premium/policy bound, renewal retained, cross-sell, quota hit) and activity (calls, appointments, first-touch on Meta/LinkedIn leads). Optional collaboration points (post, share, comment, like).
+2. Badges/trophies on milestones (first bind, 10 quotes in a week, 100% quota, fastest speed-to-lead of the day).
+3. Streaks: consecutive days with a qualifying activity (remote-agent daily habit).
+4. Challenges / seasons: time-boxed contests (e.g. “Auto bind week”) with prize notes.
+5. Personal scorecard on homepage: points, rank, badges, streak, distance to next badge.
+6. Notifications when rank changes, badge earned, or a teammate takes 1st (configurable, non-spammy).
+7. Admin can pause gamification; user opt-out of public boards if policy requires (still see personal score).
+8. Insurance KPIs from INS-FR-006 are first-class scoring metrics.
 
 **Acceptance criteria**
 
-- Closing a won deal awards the configured points and can grant a badge.
-- Liking a feed post awards collaboration points if enabled.
-- Leaderboard ranks update within a few minutes.
-- User opt-out hides them from public boards but still tracks personal badges if enabled.
+- Binding a policy awards configured points and can grant a badge.
+- First touch on a Meta lead within SLA can award speed-to-lead points.
+- Personal scorecard is visible to a remote agent on mobile homepage.
+- Pause stops new points without deleting history.
+
+---
+
+### 5.6 Daily, weekly, and monthly leaderboards
+
+**Priority:** P0  
+**ID:** SPM-FR-006
+
+The solution shall **publish daily, weekly, and monthly leaderboards** so distributed teams can see who is winning on the metrics that matter.
+
+**User story**  
+As a remote producer, I want to open GVCRM in the morning and see yesterday’s close, this week’s standings, and month-to-date premium rank for my agency.
+
+**Detailed requirements**
+
+1. Three standing boards always available: **Daily**, **Weekly**, **Monthly** (org timezone; US agency default).
+2. Each board supports one or more metrics: points, premium bound, policies bound, quotes, new leads, Meta leads worked, LinkedIn leads worked, calls, appointments, speed-to-lead, renewals retained (admin-selected defaults per org).
+3. Scopes: whole org/agency, team/branch, LOB, and “me vs team” highlight.
+4. **Publish**: boards are visible on homepage, a dedicated Leaderboards page, optional feed announcement, and optional scheduled email/Slack-style digest (start of next day / Monday / month).
+5. Real-time or near-real-time rank for the **Daily** board (≤ 5 minutes); Weekly/Monthly can use the same snapshots.
+6. Drill-down from a rank row to the underlying records the viewer is allowed to see (aggregates only if FLS/sharing blocks deal detail).
+7. Historical archive: past days/weeks/months remain viewable (who won last week).
+8. Ties: documented tie-break (e.g. earlier timestamp, then alphabetical).
+9. Fairness: OOO days can be excluded from daily boards (configurable).
+10. Assistant can answer “Where am I on this week’s leaderboard?” (AIA).
+
+**Acceptance criteria**
+
+- Switching Daily / Weekly / Monthly updates ranks and metrics without a full page reload.
+- A bind today moves the producer on the Daily board within 5 minutes.
+- Weekly board resets on the configured week start (e.g. Monday 00:00 org TZ).
+- Monthly board matches month-to-date premium/policy totals in reports.
+- Published digest email (if enabled) contains top N + recipient’s own rank.
+- Peer cannot open another producer’s household PII from the leaderboard row unless they already have record access.
 
 ---
 
@@ -206,7 +247,8 @@ As enablement, I want points for closed-won and for feed engagement, with a mont
 | Campaign / CampaignMember | Sales campaign execution |
 | CampaignInfluence | Deal attribution |
 | GamificationRule / PointEvent | Points engine |
-| Badge / Trophy / LeaderboardSnapshot | Recognition |
+| Badge / Trophy / Streak / Challenge | Recognition and seasons |
+| LeaderboardDefinition / LeaderboardSnapshot | Daily / weekly / monthly published ranks |
 
 ## 7. Integrations
 
@@ -217,6 +259,8 @@ As enablement, I want points for closed-won and for feed engagement, with a mont
 | SPM-INT-003 | Team Collaboration | Gamification engagement events |
 | SPM-INT-004 | Dashboards and Reports | Visualization and scheduled packs |
 | SPM-INT-005 | Products / Territories | Forecast filters |
+| SPM-INT-006 | Meta / LinkedIn via Leads | Campaign members and ad ROI |
+| SPM-INT-007 | Insurance KPIs (INS) | Premium, policies, LOB leaderboard metrics |
 
 ## 8. Permissions and security
 
@@ -233,9 +277,10 @@ As enablement, I want points for closed-won and for feed engagement, with a mont
 | ID | Requirement |
 |----|-------------|
 | SPM-NFR-001 | Forecast view P95 < 3s for a team of 50 reps and 20k open opportunities (pre-aggregation allowed). |
-| SPM-NFR-002 | Goal progress lag ≤ 5 minutes after a won deal. |
+| SPM-NFR-002 | Goal progress lag ≤ 5 minutes after a won deal or bind. |
 | SPM-NFR-003 | Campaign stats consistent with member status counts. |
 | SPM-NFR-004 | Gamification events are idempotent (no double points on retries). |
+| SPM-NFR-005 | Daily leaderboard rank update P95 ≤ 5 minutes after a scoring event. |
 
 ## 10. Dependencies
 
@@ -249,12 +294,15 @@ As enablement, I want points for closed-won and for feed engagement, with a mont
 | Dashboards and Reports | Attainment and campaign dashboards |
 | Platform | Homepage widgets, notifications, custom KPIs |
 | Products | Product-filtered forecast |
+| US Insurance Agency and Remote Sales | LOB/premium KPIs, remote producer motivation |
+| AI Assistant and Central Chat | “My rank today / this week / this month” |
 
 ## 11. Traceability
 
 | Source capability | Requirement IDs |
 |-------------------|-----------------|
-| Gamification | SPM-FR-005 |
+| Gamification (complete) | SPM-FR-005 |
+| Daily / weekly / monthly leaderboards | SPM-FR-006 |
 | Goals Management | SPM-FR-001 |
 | Sales Campaigns | SPM-FR-004 |
 | Sales Forecasting | SPM-FR-003 |

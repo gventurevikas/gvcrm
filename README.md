@@ -1,8 +1,10 @@
 # GVCRM
 
-**Open customer relationship platform for sales teams — CRM, automation, and a marketplace to publish and install apps.**
+**CRM for US insurance agencies and insurance companies — built for remote, sales-first producers.**
 
-GVCRM is a full-lifecycle CRM: accounts and contacts, leads, pipelines, quotes-to-cash, collaboration, reporting, and an extensible platform. Organizations can tailor the product with custom apps, then **publish those apps to the GVCRM Marketplace** or to **external stores** (Salesforce AppExchange, HubSpot Marketplace, Microsoft AppSource, Google Workspace Marketplace, Slack, and others).
+GVCRM is a full-lifecycle sales CRM oriented to **independent and captive agencies**, **MGAs/IMOs**, and **carrier sales teams in the United States**. Agents often work from home or the field: they need instant **Meta and LinkedIn** leads, insurance pipelines (new business, cross-sell, renewal), a **central ChatGPT-mini assistant**, and **daily / weekly / monthly leaderboards** so distributed teams stay competitive without an office floor.
+
+The platform still covers accounts, quotes-to-cash, collaboration, reporting, custom apps, and a **Marketplace** (in-product plus external stores such as Salesforce AppExchange, HubSpot Marketplace, Microsoft AppSource, Google Workspace Marketplace, and Slack).
 
 > **Status:** Product requirements are published and implementation-ready. Application code is not in this repository yet.
 
@@ -13,7 +15,9 @@ GVCRM is a full-lifecycle CRM: accounts and contacts, leads, pipelines, quotes-t
 - [Why GVCRM](#why-gvcrm)
 - [Who it is for](#who-it-is-for)
 - [What you can do](#what-you-can-do)
+- [US insurance and remote sales](#us-insurance-and-remote-sales)
 - [Product modules](#product-modules)
+- [Central chat and ChatGPT-mini assistant](#central-chat-and-chatgpt-mini-assistant)
 - [Marketplace and app publishing](#marketplace-and-app-publishing)
 - [Platform foundations](#platform-foundations)
 - [Repository layout](#repository-layout)
@@ -33,13 +37,14 @@ Most CRMs stop at records and reports. GVCRM is specified as both a **sales syst
 
 | Pillar | What it means |
 |--------|----------------|
-| **Sell** | Leads → opportunities → quotes, orders, contracts, and invoices in one place |
-| **Run** | Dashboards, forecasts, goals, campaigns, and team collaboration |
+| **Sell** | Insurance new business, cross-sell, and renewals — quotes, binds, book of business |
+| **Run** | Remote agent workspace, forecasts, Meta/LinkedIn campaigns, D/W/M leaderboards |
+| **Ask & act** | Central ChatGPT-mini chat to operate any module and build custom reports |
 | **Automate** | Visual sales processes, workflow rules, validation, and approvals |
 | **Extend** | Custom fields, modules, layouts, and full custom apps |
 | **Publish** | Package an app once; list it on the in-product marketplace or an external store |
 
-Detailed specifications live in independent, implementable requirement documents under `docs/requirements/`, including marketplace and app publishing.
+Detailed specifications live in independent, implementable requirement documents under `docs/requirements/`.
 
 ---
 
@@ -47,25 +52,27 @@ Detailed specifications live in independent, implementable requirement documents
 
 | Audience | How they use GVCRM |
 |----------|--------------------|
-| Sales representatives | Work leads and deals, call/email/SMS, book meetings, follow playbooks |
-| Managers and RevOps | Pipelines, rotting deals, forecasts, quotas, assignment rules |
-| Admins and IT | Sandbox → production deploy, languages, currencies, security |
-| Partners and ISVs | Build custom apps, submit to the marketplace, monetize connectors |
-| Prospects and customers | Scheduling links, product portals, quote/invoice links (no full CRM login) |
+| Remote producers / agents | Work Meta/LinkedIn leads, quote and bind, call/SMS, chat, watch today’s leaderboard |
+| ISAs / inside sales | Speed-to-lead, round-robin queues, appointment set for producers |
+| Agency principals / sales managers | Book growth, D/W/M leaderboards, renewals, producer coaching |
+| Carrier sales / wholesalers | Appointed agencies, pipeline by LOB and state |
+| Admins and compliance | Sandbox deploy, TCPA/DNC, license expiry, assistant governance |
+| Partners and ISVs | Industry packs, raters, carrier connectors via Marketplace |
 
 ---
 
 ## What you can do
 
 - Maintain **account hierarchies** and **360° contact views**, including org charts and maps
-- Capture **leads** from forms, import, email parser, card scan, and APIs; score and auto-assign them
-- Run **multiple sales pipelines** on a Kanban board, with win probability and **rotting-deal** alerts
+- Capture **leads** from forms, import, email parser, card scan, APIs, and **real-time Meta + LinkedIn campaigns**; score and auto-assign them
+- Run **insurance pipelines** (new business, cross-sell, renewal) on a Kanban board, with win probability and **rotting-deal** alerts
 - Communicate from CRM or Gmail/Outlook: email, SMS, calls, templates, tracking, and mass send
 - Generate **quotes, orders, contracts, invoices**, and supply/payment schedules
 - Store **documents and playbooks** with search, share links, and version history
-- Track performance with **goals, forecasts** (best / likely / worst), campaigns, and gamification
+- Track performance with **goals, forecasts** (best / likely / worst), Meta/LinkedIn campaign ROI, and **complete gamification** (daily, weekly, monthly leaderboards)
 - Collaborate with **feeds, mentions, private chat, tags, user groups, and field check-in**
 - Automate with **approvals, validation rules, workflow rules, and a visual sales process editor**
+- Use **central chat (ChatGPT-mini)** to run operations across modules and **create custom reports** from required details
 - Extend the CRM with **custom apps**, then **install or publish** them through Marketplace
 
 ---
@@ -78,19 +85,59 @@ Each module has its own requirement file. Specs are independent so a team can im
 |--------|---------|------|
 | **Accounts & Contacts** | Company/person 360°, hierarchy, org charts, maps, individual and group scheduling | [01](docs/requirements/01-accounts-and-contacts-management.md) |
 | **Customer Communication** | Calls, native email, Gmail/Outlook, SMS, templates, tracking, mass email | [02](docs/requirements/02-customer-communication-management.md) |
-| **Dashboards & Reports** | Homepage, pre-built and custom analytics, charts, sharing, API usage | [03](docs/requirements/03-dashboards-and-reports.md) |
+| **Dashboards & Reports** | Homepage, pre-built and custom analytics, charts, sharing, API usage; engine for chat-built reports | [03](docs/requirements/03-dashboards-and-reports.md) |
 | **Documents** | Repository, attachments, encrypted share links, search, conversion, playbooks, versions | [04](docs/requirements/04-documents-management.md) |
-| **Leads** | Multi-source capture, scoring, round-robin/criteria assignment, parser, card scan, win-loss | [05](docs/requirements/05-leads-management.md) |
+| **Leads** | Multi-source capture including **real-time Meta & LinkedIn**, scoring, assignment, parser, card scan, win-loss | [05](docs/requirements/05-leads-management.md) |
 | **Opportunities / Deals** | Multi-pipeline, Kanban, probability, rotting (P0), activity timeline, journey designer | [06](docs/requirements/06-opportunities-deals-management.md) |
 | **Products** | Catalog, taxonomy, groups, costs/pricing, branded prospect portals | [07](docs/requirements/07-products-management.md) |
 | **Quotes, Orders & Contracts** | Quote-to-cash, website order intake, invoices, amendments, supply schedules | [08](docs/requirements/08-quotes-orders-and-contracts-management.md) |
 | **Platform** | Custom fields/layouts/modules/apps, sandbox, deploy, i18n, multi-currency, cases, notes | [09](docs/requirements/09-platform-capabilities.md) |
-| **Sales Performance** | Goals, target achievement, forecasting, campaigns, gamification | [10](docs/requirements/10-sales-performance-management.md) |
+| **Sales Performance** | Goals, forecasting, Meta/LinkedIn campaigns, **complete gamification**, **D/W/M leaderboards** | [10](docs/requirements/10-sales-performance-management.md) |
 | **Team Collaboration** | Feeds, geo check-in, mentions, private chat, tags, user groups | [11](docs/requirements/11-team-collaboration.md) |
 | **Workflows & Automation** | Sales process editor, workflow rules, templates, validation, approvals | [12](docs/requirements/12-workflows-and-process-automation.md) |
 | **Marketplace & Publishing** | In-app store, publisher portal, external marketplace hub | [13](docs/requirements/13-marketplace-and-app-publishing.md) |
+| **AI Assistant & Central Chat** | ChatGPT-mini system assistant: help, business operations, conversational custom reports | [14](docs/requirements/14-ai-assistant-and-central-chat.md) |
+| **US Insurance & Remote Sales** | Agency/carrier orientation, households, LOBs, book of business, remote workspace, US compliance | [15](docs/requirements/15-us-insurance-agency-and-remote-sales.md) |
 
 Full index, ID convention, and priority legend: [docs/requirements/README.md](docs/requirements/README.md).
+
+---
+
+## US insurance and remote sales
+
+GVCRM is **not a generic CRM first**. It is specified for how insurance is sold in the USA when producers are distributed:
+
+| Need | How GVCRM helps |
+|------|-----------------|
+| Agency or carrier org | Tenant modes, LOBs (auto, home, life, health, commercial, …), USD, state/ZIP |
+| Households and book | Insured accounts, policies in CRM, renewal opportunities, cross-sell prompts |
+| Remote work | Mobile queue, push alerts, OOO-aware routing, check-in, central assistant |
+| Paid social leads | **Meta Lead Ads** and **LinkedIn Lead Gen Forms** into CRM in seconds, then assign + notify |
+| Motivation without an office | **Daily, weekly, and monthly leaderboards** (premium, quotes, speed-to-lead, points, badges) |
+| US outreach rules | TCPA/DNC/consent on call, SMS, email, and assistant sends |
+
+This is a **sales CRM for insurance**, not a full policy-admin or rating system. Carrier quoting/binding can be added through Marketplace apps.
+
+Details: [docs/requirements/15-us-insurance-agency-and-remote-sales.md](docs/requirements/15-us-insurance-agency-and-remote-sales.md).
+
+---
+
+## Central chat and ChatGPT-mini assistant
+
+GVCRM includes one **central chat** available from every screen. **ChatGPT-mini** is the overall-system assistant: it understands all modules, helps users complete work, and can **execute permitted business operations** (create a lead, update a deal, log a call, draft an email, open a case, and more).
+
+It also **builds custom reports from required details**. If the user omits object, metrics, filters, date range, grouping, or chart type, the assistant asks for what is still needed, previews the spec, then runs and optionally saves a real report in Dashboards and Reports.
+
+| You type | Assistant does |
+|----------|----------------|
+| “Show my new Meta and LinkedIn leads” | Lists today’s ad leads and offers claim / first-touch call |
+| “Add a homeowners cross-sell on the Smith household” | Preview → confirm → create opportunity on the book |
+| “Premium bound by producer this month, bar chart” | Collect missing details → run report → save / share / pin |
+| “Where am I on this week’s leaderboard?” | Returns rank, metric, and gap to #1 |
+
+Writes always respect role, sharing, and field-level security. Risky actions (send email, mass update, delete) require explicit confirmation and an audit trail.
+
+Details: [docs/requirements/14-ai-assistant-and-central-chat.md](docs/requirements/14-ai-assistant-and-central-chat.md).
 
 ---
 
@@ -133,6 +180,9 @@ These cross-cutting capabilities apply across modules:
 - Real-time notifications, follow-up reminders, notes (text and audio)
 - Case management and bulk spreadsheet-style editing
 - Validation, workflow automation, and multi-step approvals (discount, contract, documents, T&E)
+- Central ChatGPT-mini assistant for help, operations, and conversational reports across all modules
+- US insurance defaults (LOB, households, USD, state) and remote-agent notifications
+- Daily / weekly / monthly leaderboard widgets on the homepage
 
 ---
 
@@ -147,7 +197,9 @@ gvcrm/
 │       ├── 01-accounts-and-contacts-management.md
 │       ├── 02-customer-communication-management.md
 │       ├── …
-│       └── 13-marketplace-and-app-publishing.md
+│       ├── 13-marketplace-and-app-publishing.md
+│       ├── 14-ai-assistant-and-central-chat.md
+│       └── 15-us-insurance-agency-and-remote-sales.md
 └── (application source will land here)
 ```
 
@@ -160,7 +212,7 @@ This repository currently holds **product definition**. Implementation (services
 | Document | Use it for |
 |----------|------------|
 | [docs/requirements/README.md](docs/requirements/README.md) | Spec index, ID prefixes, P0/P1/P2 legend |
-| [docs/requirements/01–13](docs/requirements/) | Implement or review a single module |
+| [docs/requirements/01–15](docs/requirements/) | Implement or review a single module |
 
 Every requirement file includes: purpose, scope, users, functional requirements with user stories and acceptance criteria, data entities, integrations, security, non-functionals, and dependencies.
 
@@ -181,7 +233,7 @@ IDs are stable and suitable for tickets and traceability:
 | `INT` | Integration |
 | `SEC` | Security / permission |
 
-Examples: `ACM-FR-003` (contact management), `ODM-FR-005` (opportunity rotting), `MKT-FR-010` (external marketplace profiles).
+Examples: `INS-FR-001` (US insurance orientation), `LED-FR-008` (Meta/LinkedIn real-time leads), `SPM-FR-006` (D/W/M leaderboards), `AIA-FR-005` (custom reports from chat).
 
 | Priority | Meaning |
 |----------|---------|
@@ -196,9 +248,9 @@ Examples: `ACM-FR-003` (contact management), `ODM-FR-005` (opportunity rotting),
 | Phase | Focus |
 |-------|--------|
 | **Now** | Open requirements and project definition |
-| **MVP** | Accounts/contacts, leads, deals (incl. rotting), communication basics, quotes, dashboards, platform (fields/layouts/sandbox), core workflows, private + public marketplace for free apps |
-| **v1** | SMS analytics, portals, website order intake, paid marketplace licensing, external listing workspace (Google, Microsoft, HubSpot) |
-| **Later** | Gamification depth, usage-based app billing, ISV payouts, additional store automations |
+| **MVP** | US insurance agency orientation, remote agent workspace, accounts/households, leads (incl. **Meta + LinkedIn real-time**), deals/renewals, communication basics, quotes, dashboards, **D/W/M leaderboards + gamification**, platform, core workflows, ChatGPT-mini chat, marketplace for free apps |
+| **v1** | Insurance industry pack polish, SMS analytics, portals, paid marketplace licensing, external listing workspace, assistant email/SMS send, license/NPN reminders |
+| **Later** | Comparative rater / AMS marketplace apps, usage-based app billing, ISV payouts, multi-step assistant agents |
 
 Suggested marketplace delivery is also spelled out in the [Marketplace spec](docs/requirements/13-marketplace-and-app-publishing.md#14-suggested-delivery-phases).
 
@@ -239,8 +291,9 @@ Please do not commit secrets (API keys, `.env`, marketplace developer credential
 - Least-privilege OAuth scopes for marketplace apps
 - Sandbox install before production
 - Encrypted document share links; revoke and expiry
-- Consent and do-not-contact honoured across email, SMS, and automation
+- Consent, TCPA, and do-not-contact honoured across email, SMS, automation, and assistant-sent messages
 - Operator kill switch for malicious or compromised apps
+- Assistant runs only as the signed-in user; no privilege escalation; kill switch for ChatGPT-mini chat
 
 To report a vulnerability, use GitHub Security Advisories or contact the maintainers privately. Do not open a public issue for exploitable findings.
 
@@ -254,4 +307,4 @@ Until a `LICENSE` file is added, all rights are reserved by the authors. If you 
 
 ---
 
-**GVCRM** — sell, run, automate, extend, and publish.
+**GVCRM** — US insurance sales CRM for remote agents: sell, compete, ask & act, automate, extend, and publish.

@@ -10,13 +10,14 @@
 
 ## 1. Purpose
 
-Capture, score, assign, and analyze **inbound and outbound leads** from many sources so sales can respond quickly, work the right prospects first, and understand where leads are won or lost.
+Capture, score, assign, and analyze **inbound and outbound leads** from many sources so sales can respond quickly, work the right prospects first, and understand where leads are won or lost. For US insurance agencies, this includes **real-time leads from Meta (Facebook/Instagram) and LinkedIn campaigns** so remote agents can work paid-social inquiries immediately.
 
 ## 2. Scope
 
 **In scope**
 
 - Multi-source lead capture and manual entry into one database
+- **Real-time Meta Lead Ads and LinkedIn Lead Gen Form ingestion**
 - Automatic lead distribution (criteria and round-robin)
 - Lead scoring with customizable rules
 - Email parser for forwarded lead data
@@ -28,23 +29,24 @@ Capture, score, assign, and analyze **inbound and outbound leads** from many sou
 - Post-conversion opportunity stage management — Opportunities / Deals
 - Mass email execution — Customer Communication
 - Full campaign object design — Sales Performance Management (campaigns may create leads)
+- Building Meta Ads Manager or LinkedIn Campaign Manager — ingest + attribute only
 
 ## 3. Users
 
 | Persona | Typical actions |
 |---------|-----------------|
 | Sales development / AE | Work assigned leads, convert, recapture |
-| Marketing ops | Capture forms, scoring rules, source mapping |
-| Sales ops | Assignment rules, round-robin queues |
-| Field rep | Scan business cards on mobile |
-| Manager | Win-loss, response time, lifecycle reports |
+| Marketing ops | Capture forms, Meta/LinkedIn campaigns, scoring rules, source mapping |
+| Sales ops | Assignment rules, round-robin queues (state, LOB, licensed producer) |
+| Remote producer / ISA | Instant ad-lead queue, card scan, first touch |
+| Manager | Win-loss, response time, lifecycle reports, ad-source ROI |
 
 ## 4. Business objectives
 
 - No lead left unassigned
 - Fair or criteria-based routing
 - Prioritization via score
-- Shorter speed-to-lead
+- Shorter speed-to-lead, especially on **Meta and LinkedIn** paid campaigns
 - Visibility into leakage (where and why leads are lost)
 
 ---
@@ -65,7 +67,7 @@ As marketing ops, I want web, import, API, and manual leads all in one lead obje
 **Detailed requirements**
 
 1. Create leads manually (quick create and full layout).
-2. Capture sources include at least: web forms, landing pages, CSV/XLS import, API, email parser, card scanner, campaigns, chat, and marketplace/partner apps.
+2. Capture sources include at least: web forms, landing pages, CSV/XLS import, API, email parser, card scanner, campaigns, chat, marketplace/partner apps, **Meta Lead Ads**, and **LinkedIn Lead Gen Forms**.
 3. Every lead stores `lead_source`, `source_detail`, UTM fields, and original payload (where applicable).
 4. Deduplicate on email / phone / domain + name using configurable match rules (create new, update existing, or review queue).
 5. Web form / embed snippet with spam protection (CAPTCHA/honeypot) and GDPR/consent fields.
@@ -245,6 +247,40 @@ To make the source capabilities usable, the solution shall support a complete le
 
 ---
 
+### 5.8 Real-time Meta and LinkedIn campaign leads
+
+**Priority:** P0  
+**ID:** LED-FR-008
+
+The solution shall ingest leads from **Meta (Facebook and Instagram) Lead Ads** and **LinkedIn Lead Gen Forms** in near real time, create or update CRM leads, attribute the campaign, assign an owner, and notify the remote agent immediately.
+
+**User story**  
+As a remote insurance producer, I want a Facebook Instant Form or LinkedIn Lead Gen submission to appear in my queue within seconds so I can call before the prospect goes cold.
+
+**Detailed requirements**
+
+1. Connect Meta Business / Ad Account(s) and LinkedIn Campaign Manager / Lead Sync via OAuth (admin).
+2. Map Instant Form / Lead Gen Form fields to Lead fields (name, email, phone, state, ZIP, LOB interest, consent checkboxes, custom questions).
+3. Ingest via **webhooks** (preferred) with API polling fallback; deduplicate on provider lead id (idempotent).
+4. Create Lead with `lead_source` = Meta or LinkedIn, `source_detail` = campaign / ad set / ad / form name, plus UTM-equivalent ad ids, page/company, and original payload.
+5. Link to Sales Performance **Campaign** record (auto-create or map existing Meta/LinkedIn campaign).
+6. Store TCPA/email consent from form fields when present; block outbound SMS/call if consent missing per org rules.
+7. Trigger assignment (LED-FR-002) immediately — e.g. state + LOB + licensed remote producer, else round-robin ISAs.
+8. Real-time notification (push, in-app, optional SMS) to the assigned agent; optional ring-alert / “claim lead” for a shared queue.
+9. Failure queue: mapping errors, disconnected token, duplicate review; retry without creating clones.
+10. Reporting: volume, cost (if spend synced P1), speed-to-lead, connect rate, quote/bind by Meta vs LinkedIn.
+
+**Acceptance criteria**
+
+- A test Meta Instant Form submission creates exactly one CRM lead with campaign attribution within **15 seconds** under normal load (P95).
+- A LinkedIn Lead Gen submission does the same with `lead_source` = LinkedIn.
+- Replay of the same provider lead id does not create a second lead.
+- Assigned remote agent receives a notification without opening the CRM first.
+- Disconnecting Meta/LinkedIn OAuth stops ingest and alerts marketing ops.
+- Leads without mapped phone/email still create a record and land in a repair queue.
+
+---
+
 ## 6. Data entities
 
 | Entity | Purpose |
@@ -258,6 +294,8 @@ To make the source capabilities usable, the solution shall support a complete le
 | ParserInbox | Parser address + mapping config |
 | CardScanJob | Image, OCR result, sync status |
 | LeadOutcomeSnapshot | Aggregates for win-loss |
+| AdLeadConnection | Meta / LinkedIn OAuth + page/ad account config |
+| AdLeadIngestEvent | Provider payload, status, idempotency key |
 
 ## 7. Integrations
 
@@ -269,6 +307,8 @@ To make the source capabilities usable, the solution shall support a complete le
 | LED-INT-004 | Public API / Marketplace apps | Partner lead injection |
 | LED-INT-005 | Communication module | First-response timing, activities |
 | LED-INT-006 | Campaigns (SPM) | Campaign member → lead |
+| LED-INT-007 | Meta Lead Ads API / webhooks | Real-time Facebook & Instagram Instant Forms |
+| LED-INT-008 | LinkedIn Lead Sync / Lead Gen Forms API | Real-time LinkedIn campaign leads |
 
 ## 8. Permissions and security
 
@@ -279,12 +319,14 @@ To make the source capabilities usable, the solution shall support a complete le
 | LED-SEC-003 | Web form endpoints are rate-limited and spam-protected. |
 | LED-SEC-004 | Card images are PII; encrypted storage and retention policy apply. |
 | LED-SEC-005 | Assignment rule admin is a distinct permission. |
+| LED-SEC-006 | Meta and LinkedIn OAuth tokens are encrypted; ingest uses least-privilege ad/lead scopes. |
+| LED-SEC-007 | Ad-form consent flags are preserved and enforced on outbound Communication. |
 
 ## 9. Non-functional requirements
 
 | ID | Requirement |
 |----|-------------|
-| LED-NFR-001 | Inbound form → assigned owner notification P95 < 15s. |
+| LED-NFR-001 | Inbound form → assigned owner notification P95 < 15s (includes Meta and LinkedIn webhook ingest). |
 | LED-NFR-002 | Score update P95 < 10s after qualifying activity. |
 | LED-NFR-003 | Import of 10k leads completes with progress feedback; no UI timeout. |
 | LED-NFR-004 | Assignment engine is deterministic and concurrent-safe (no double assign). |
@@ -303,6 +345,8 @@ To make the source capabilities usable, the solution shall support a complete le
 | Platform | Custom fields, layouts, notifications, mobile |
 | Workflows | Score-threshold and assignment side effects |
 | Marketplace | Lead capture apps / form apps |
+| US Insurance Agency and Remote Sales | State/LOB routing, TCPA, remote agent queue |
+| AI Assistant and Central Chat | “Show my new Meta leads” / claim and log first touch |
 
 ## 11. Traceability
 
@@ -315,3 +359,4 @@ To make the source capabilities usable, the solution shall support a complete le
 | Lead Scoring | LED-FR-003 |
 | Win-Loss Analysis | LED-FR-006 |
 | (Lifecycle needed to operate the module) | LED-FR-007 |
+| Real-time Meta and LinkedIn campaign leads | LED-FR-008 |

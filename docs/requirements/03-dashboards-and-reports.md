@@ -24,12 +24,14 @@ Give every user a **homepage and analytics workspace** to monitor sales activity
 - API usage dashboard
 - Report preview, export, sharing, and scheduled delivery
 - Dashboard sharing and PDF export
+- Report query/save APIs consumed by the AI Assistant for conversational custom reports
 
 **Out of scope**
 
 - Defining sales targets and forecasts — Sales Performance Management (this module visualizes them)
 - Building custom apps that embed dashboards — Platform Capabilities
 - Marketplace listing analytics — Marketplace module
+- Conversational chat UI and ChatGPT-mini orchestration — AI Assistant and Central Chat (this module supplies the report engine)
 
 ## 3. Users
 
@@ -178,6 +180,32 @@ As a sales ops analyst, I want to join deals to products and filter by stage wit
 - Drill-down opens the matching record set.
 - User without access to a field cannot add it to the report.
 - Report save requires name, folder, and visibility scope.
+
+---
+
+### 5.5a Conversational custom reports (engine contract)
+
+**Priority:** P0  
+**ID:** DAR-FR-015
+
+The report engine shall accept a structured report specification from the **AI Assistant** (and other clients), run it with the requesting user’s security, and return results plus a saveable report definition.
+
+**User story**  
+As the GVCRM Assistant, I want to turn “won revenue by AE this quarter” into a real DAR report so the manager can open, share, or pin it.
+
+**Detailed requirements**
+
+1. Public (internal) API: create preview, run, save, export — same semantics as the drag-and-drop builder.
+2. Spec includes object, columns/metrics, filters, grouping, date range, chart type, name, folder.
+3. Validation errors return field-level messages the assistant can ask the user to fix (missing required details).
+4. Row- and field-level security always applied as the user.
+5. Saved artifacts are indistinguishable from UI-built reports.
+
+**Acceptance criteria**
+
+- A spec created via assistant save opens correctly in the custom report builder.
+- Totals match an equivalent UI-built report for the same user.
+- Missing required spec fields return a structured error (not a blank failure).
 
 ---
 
@@ -415,6 +443,7 @@ The solution shall allow users to share dashboards with others, export them as P
 | DAR-INT-002 | Object query engine (all CRM objects) | Report data source |
 | DAR-INT-003 | API gateway telemetry | API usage dashboard |
 | DAR-INT-004 | Export pipeline (PDF/XLS/CSV workers) | Async file generation |
+| DAR-INT-005 | AI Assistant (ChatGPT-mini central chat) | Conversational custom report create/run/save |
 
 ## 8. Permissions and security
 
@@ -446,6 +475,7 @@ The solution shall allow users to share dashboards with others, export them as P
 | Sales Performance Management | Targets, forecasts, campaigns as metrics |
 | Platform Capabilities | Homepage gadgets, notifications, sandbox copies of dashboards |
 | Marketplace | API consumers appear on API usage dashboard |
+| AI Assistant and Central Chat | Natural-language custom reports; assistant usage widgets may appear on homepage |
 
 ## 11. Traceability
 
@@ -457,6 +487,7 @@ The solution shall allow users to share dashboards with others, export them as P
 | Charts and Visualizations | DAR-FR-006 |
 | Customizable Dashboard | DAR-FR-003 |
 | Custom Reports | DAR-FR-005 |
+| Conversational custom reports (engine) | DAR-FR-015 |
 | Dashboard Sharing | DAR-FR-014 |
 | Deal Reports | DAR-FR-008 |
 | Email Reports | DAR-FR-009 |

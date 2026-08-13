@@ -1,6 +1,6 @@
 # GVCRM Detailed Requirements
 
-This folder contains **independent, implementation-ready requirement specifications** for GVCRM, including **Marketplace and App Publishing**.
+This folder contains **independent, implementation-ready requirement specifications** for GVCRM. The product is oriented to **US insurance agencies and insurance companies**, with **remote, sales-first producers**, plus Marketplace, ChatGPT-mini central chat, Meta/LinkedIn real-time leads, and **daily / weekly / monthly leaderboards**.
 
 Each module file is self-contained. A team can implement or review one section without reading the others. Cross-module dependencies are listed inside each file.
 
@@ -21,6 +21,8 @@ Each module file is self-contained. A team can implement or review one section w
 | 11 | Team Collaboration | [11-team-collaboration.md](./11-team-collaboration.md) | TCL |
 | 12 | Workflows and Process Automation | [12-workflows-and-process-automation.md](./12-workflows-and-process-automation.md) | WPA |
 | 13 | Marketplace and App Publishing | [13-marketplace-and-app-publishing.md](./13-marketplace-and-app-publishing.md) | MKT |
+| 14 | AI Assistant and Central Chat | [14-ai-assistant-and-central-chat.md](./14-ai-assistant-and-central-chat.md) | AIA |
+| 15 | US Insurance Agency and Remote Sales | [15-us-insurance-agency-and-remote-sales.md](./15-us-insurance-agency-and-remote-sales.md) | INS |
 
 ## How to read each file
 
@@ -61,7 +63,7 @@ Where a capability is marked **High** (for example Opportunity Rotting), it is t
 
 ## Cross-cutting platform themes
 
-These apply across modules and are specified in detail inside Platform, Workflows, and Marketplace:
+These apply across modules and are specified in detail inside Platform, Workflows, Marketplace, and AI Assistant:
 
 - Multi-language UI and multi-currency commercial records
 - Role-based access, record sharing, and audit history
@@ -70,3 +72,8 @@ These apply across modules and are specified in detail inside Platform, Workflow
 - Workflow, validation, and approval automation
 - Internal marketplace for installing and publishing apps
 - Optional publishing of GVCRM (or GVCRM apps) to external marketplaces
+- Central chat (ChatGPT-mini) to help and run business operations across all modules
+- Conversational custom reports from required details
+- US insurance agency / carrier orientation for remote sales producers
+- Real-time Meta and LinkedIn campaign leads
+- Complete gamification with published daily, weekly, and monthly leaderboards

@@ -32,6 +32,7 @@ This is the foundation for **Marketplace publishing**: custom apps and modules c
 
 - Workflow rule engine details — Workflows and Process Automation
 - Marketplace listing UX — Marketplace module (this module supplies packagable metadata)
+- Central ChatGPT-mini assistant UX — AI Assistant and Central Chat (this module supplies identity, FLS, language, notifications, sandbox)
 
 ## 3. Users
 
@@ -486,6 +487,7 @@ The solution shall deliver and filter real-time notifications so users can track
 | Opportunities | Color icons on pipeline |
 | Marketplace | Package custom apps/modules for publish and install |
 | Team Collaboration | Mentions in notes |
+| AI Assistant and Central Chat | Assistant runs as the user; language, notifications, sandbox isolation |
 
 ## 11. Traceability
 
