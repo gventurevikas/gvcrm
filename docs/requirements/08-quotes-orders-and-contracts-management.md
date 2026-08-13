@@ -3,7 +3,7 @@
 **Document ID:** GVCRM-REQ-QOC  
 **Version:** 1.0  
 **Status:** Draft for implementation  
-**Source:** CRM Requirement sheet — Quotes, Orders, and Contracts Management  
+**Module:** Quotes, Orders, and Contracts Management  
 **This document is independent.** Related modules are listed only as dependencies.
 
 ---

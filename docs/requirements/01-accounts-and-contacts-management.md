@@ -3,7 +3,7 @@
 **Document ID:** GVCRM-REQ-ACM  
 **Version:** 1.0  
 **Status:** Draft for implementation  
-**Source:** CRM Requirement sheet — Accounts and Contacts Management  
+**Module:** Accounts and Contacts Management  
 **This document is independent.** Related modules are listed only as dependencies.
 
 ---

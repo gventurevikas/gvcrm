@@ -3,7 +3,7 @@
 **Document ID:** GVCRM-REQ-PLT  
 **Version:** 1.0  
 **Status:** Draft for implementation  
-**Source:** CRM Requirement sheet — Platform Capabilities  
+**Module:** Platform Capabilities  
 **This document is independent.** Related modules are listed only as dependencies.
 
 ---

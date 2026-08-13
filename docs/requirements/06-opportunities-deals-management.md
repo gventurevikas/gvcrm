@@ -3,7 +3,7 @@
 **Document ID:** GVCRM-REQ-ODM  
 **Version:** 1.0  
 **Status:** Draft for implementation  
-**Source:** CRM Requirement sheet — Opportunities/Deals Management  
+**Module:** Opportunities / Deals Management  
 **This document is independent.** Related modules are listed only as dependencies.
 
 ---

@@ -3,7 +3,7 @@
 **Document ID:** GVCRM-REQ-WPA  
 **Version:** 1.0  
 **Status:** Draft for implementation  
-**Source:** CRM Requirement sheet — Workflows and Process Automation  
+**Module:** Workflows and Process Automation  
 **This document is independent.** Related modules are listed only as dependencies.
 
 ---

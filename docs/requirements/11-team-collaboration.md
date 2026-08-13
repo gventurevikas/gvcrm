@@ -3,7 +3,7 @@
 **Document ID:** GVCRM-REQ-TCL  
 **Version:** 1.0  
 **Status:** Draft for implementation  
-**Source:** CRM Requirement sheet — Team Collaboration  
+**Module:** Team Collaboration  
 **This document is independent.** Related modules are listed only as dependencies.
 
 ---

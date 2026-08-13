@@ -3,7 +3,7 @@
 **Document ID:** GVCRM-REQ-PRD  
 **Version:** 1.0  
 **Status:** Draft for implementation  
-**Source:** CRM Requirement sheet — Products Management  
+**Module:** Products Management  
 **This document is independent.** Related modules are listed only as dependencies.
 
 ---

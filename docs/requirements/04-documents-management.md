@@ -3,7 +3,7 @@
 **Document ID:** GVCRM-REQ-DOC  
 **Version:** 1.0  
 **Status:** Draft for implementation  
-**Source:** CRM Requirement sheet — Documents Management  
+**Module:** Documents Management  
 **This document is independent.** Related modules are listed only as dependencies.
 
 ---

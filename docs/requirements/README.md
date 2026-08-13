@@ -1,6 +1,6 @@
 # GVCRM Detailed Requirements
 
-This folder contains **independent, implementation-ready requirement specifications** derived from `docs/CRM Requirement - Google Sheets.pdf` and `docs/CRM-Requirement.xlsx`, plus a new **Marketplace and App Publishing** capability.
+This folder contains **independent, implementation-ready requirement specifications** for GVCRM, including **Marketplace and App Publishing**.
 
 Each module file is self-contained. A team can implement or review one section without reading the others. Cross-module dependencies are listed inside each file.
 
@@ -49,7 +49,7 @@ Example: `ACM-FR-003` is the third functional requirement in Accounts and Contac
 
 ## Priority legend
 
-Used where the source indicated priority, or where the capability is foundational.
+Used where a capability is foundational or marked high priority.
 
 | Priority | Meaning |
 |----------|---------|
@@ -57,7 +57,7 @@ Used where the source indicated priority, or where the capability is foundationa
 | P1 | Should have in first production release |
 | P2 | Nice to have / later phase |
 
-Where the source marked a capability **High** (for example Opportunity Rotting), it is treated as **P0**.
+Where a capability is marked **High** (for example Opportunity Rotting), it is treated as **P0**.
 
 ## Cross-cutting platform themes
 
@@ -70,9 +70,3 @@ These apply across modules and are specified in detail inside Platform, Workflow
 - Workflow, validation, and approval automation
 - Internal marketplace for installing and publishing apps
 - Optional publishing of GVCRM (or GVCRM apps) to external marketplaces
-
-## Source
-
-- `docs/CRM Requirement - Google Sheets.pdf`
-- `docs/CRM-Requirement.xlsx`
-- Marketplace / app publishing: additional product requirement requested beyond the source sheet

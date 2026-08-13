@@ -39,7 +39,7 @@ Most CRMs stop at records and reports. GVCRM is specified as both a **sales syst
 | **Extend** | Custom fields, modules, layouts, and full custom apps |
 | **Publish** | Package an app once; list it on the in-product marketplace or an external store |
 
-The detailed specifications started from the CRM capability sheet in `docs/` and were expanded into independent, implementable requirement documents — including marketplace publishing, which was not in the original sheet.
+Detailed specifications live in independent, implementable requirement documents under `docs/requirements/`, including marketplace and app publishing.
 
 ---
 
@@ -142,8 +142,6 @@ These cross-cutting capabilities apply across modules:
 gvcrm/
 ├── README.md                          ← you are here
 ├── docs/
-│   ├── CRM Requirement - Google Sheets.pdf   ← original capability sheet
-│   ├── CRM-Requirement.xlsx
 │   └── requirements/                  ← detailed, independent specs
 │       ├── README.md
 │       ├── 01-accounts-and-contacts-management.md
@@ -163,8 +161,6 @@ This repository currently holds **product definition**. Implementation (services
 |----------|------------|
 | [docs/requirements/README.md](docs/requirements/README.md) | Spec index, ID prefixes, P0/P1/P2 legend |
 | [docs/requirements/01–13](docs/requirements/) | Implement or review a single module |
-| `docs/CRM Requirement - Google Sheets.pdf` | Original source capabilities |
-| `docs/CRM-Requirement.xlsx` | Same source in spreadsheet form |
 
 Every requirement file includes: purpose, scope, users, functional requirements with user stories and acceptance criteria, data entities, integrations, security, non-functionals, and dependencies.
 
@@ -255,14 +251,6 @@ To report a vulnerability, use GitHub Security Advisories or contact the maintai
 License for this repository is **to be confirmed** before the first public release.
 
 Until a `LICENSE` file is added, all rights are reserved by the authors. If you fork or reuse this material, wait for an explicit open-source license or obtain written permission.
-
----
-
-## Source
-
-- `docs/CRM Requirement - Google Sheets.pdf`
-- `docs/CRM-Requirement.xlsx`
-- Marketplace and app publishing: additional product requirement beyond the original sheet
 
 ---
 

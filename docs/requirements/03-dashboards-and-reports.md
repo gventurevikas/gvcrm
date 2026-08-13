@@ -3,7 +3,7 @@
 **Document ID:** GVCRM-REQ-DAR  
 **Version:** 1.0  
 **Status:** Draft for implementation  
-**Source:** CRM Requirement sheet — Dashboards and Reports  
+**Module:** Dashboards and Reports  
 **This document is independent.** Related modules are listed only as dependencies.
 
 ---

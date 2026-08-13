@@ -3,7 +3,8 @@
 **Document ID:** GVCRM-REQ-MKT  
 **Version:** 1.0  
 **Status:** Draft for implementation  
-**Source:** Additional product requirement (not in the original CRM sheet). Complements Platform Capabilities — Custom Apps / Custom Modules / Packages.  
+**Module:** Marketplace and App Publishing  
+**Related:** Platform Capabilities — Custom Apps / Custom Modules / Packages.  
 **This document is independent.** Related modules are listed only as dependencies.
 
 ---
@@ -507,4 +508,4 @@ Installed apps shall use documented, scoped APIs.
 | Package & submit apps | MKT-FR-007, MKT-FR-008, MKT-FR-009 |
 | External marketplace hub | MKT-FR-010, MKT-FR-011, MKT-FR-012, MKT-FR-013 |
 | App runtime APIs | MKT-FR-014 |
-| Source sheet — Custom Apps / Custom Modules / Packages | PLT-FR-008, PLT-FR-009 (Platform doc) + this module |
+| Custom Apps / Custom Modules / Packages (Platform) | PLT-FR-008, PLT-FR-009 (Platform doc) + this module |
