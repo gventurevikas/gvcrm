@@ -1,0 +1,21 @@
+STEP 0
+Journey four covers commercial guardrails: what happens when a quote discount needs approval.
+
+STEP 1
+A sales rep is finishing a quote and applies a discount above the agency threshold. The commercial intent is clear — but policy says this needs a second set of eyes.
+
+STEP 2
+Save is blocked. Validation and approval rules fire together, so the quote cannot skip governance on the UI or the API.
+
+STEP 3
+The designated approver — manager or finance — gets a real-time notification with a deep link to the request.
+
+STEP 4
+In Approvals, they review the discount, amount, and customer context, then approve or reject with comments. Multi-step chains are supported when needed.
+
+STEP 5
+On approval, the quote unlocks for send. The audit trail remains — who asked, who approved, and when.
+
+STEP 6
+Journey four complete: discounts move fast, but never without control.
+

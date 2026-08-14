@@ -1,0 +1,27 @@
+STEP 0
+Journey six shows how teams unstick a deal together — rotting signals, feeds, mentions, and secure document sharing.
+
+STEP 1
+A deal has gone quiet. Rotting criteria flag it: too many days in stage, or no recent activity.
+
+STEP 2
+On the Kanban board, that card stands out so the problem is visible without opening a spreadsheet.
+
+STEP 3
+The rep posts on the opportunity feed — context for anyone who already has access to the record.
+
+STEP 4
+They mention their manager. The notification carries a safe snippet — restricted fields stay hidden — and a deep link back to the deal.
+
+STEP 5
+The manager opens the notification center and jumps straight into the conversation.
+
+STEP 6
+Meanwhile, the rep shares a proposal with the customer using an encrypted link — expiry, optional password, and revoke anytime. No CRM session for the external viewer.
+
+STEP 7
+Everything lands on the activity timeline. Followers stay in sync as the deal moves again.
+
+STEP 8
+Journey six complete: visibility, collaboration, and secure customer sharing in one flow.
+

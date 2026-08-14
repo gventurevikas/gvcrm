@@ -1,0 +1,21 @@
+STEP 0
+Journey ten is the carrier lens: wholesalers see appointed agencies only — pipeline and reports stay inside that boundary.
+
+STEP 1
+A carrier sales user signs in. Access issues a session scoped to the carrier organization and their entitlements.
+
+STEP 2
+The tenant is oriented for carrier operations — United States defaults, lines of business, and insurance pipelines.
+
+STEP 3
+Appointments define which agencies this wholesaler may see. Producer and agency context stay within that appointed set.
+
+STEP 4
+Pipeline views filter by line of business and state for appointed partners — not the entire market.
+
+STEP 5
+Deal reports respect the same sharing model. Non-appointed agency data simply never appears.
+
+STEP 6
+Journey ten complete: carrier visibility without oversharing.
+

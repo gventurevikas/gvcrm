@@ -192,14 +192,32 @@ These cross-cutting capabilities apply across modules:
 gvcrm/
 ├── README.md                          ← you are here
 ├── docs/
-│   └── requirements/                  ← detailed, independent specs
+│   ├── requirements/                  ← detailed, independent specs
+│   │   ├── README.md
+│   │   ├── 01-accounts-and-contacts-management.md
+│   │   ├── …
+│   │   └── 15-us-insurance-agency-and-remote-sales.md
+│   ├── database/                      ← MySQL + ClickHouse table/field plan
+│   │   ├── README.md
+│   │   ├── 00-conventions.md
+│   │   ├── …
+│   │   └── 17-clickhouse-analytics.md
+│   ├── plans/                         ← spiral SDLC implementation plans
+│   │   ├── README.md
+│   │   ├── 00-program-master-spiral-plan.md
+│   │   ├── 00-foundation-platform-skeleton.md
+│   │   └── 01–15 module spiral plans
+│   ├── use-cases/                     ← detailed use cases (all FRs + E2E journeys)
+│   │   ├── README.md
+│   │   ├── 00-actors-and-conventions.md
+│   │   ├── 00-access-and-session-use-cases.md
+│   │   ├── 00-end-to-end-journeys.md
+│   │   └── 01–15 module use cases
+│   └── developer/                     ← join-ready developer rules (Angular + platform)
 │       ├── README.md
-│       ├── 01-accounts-and-contacts-management.md
-│       ├── 02-customer-communication-management.md
-│       ├── …
-│       ├── 13-marketplace-and-app-publishing.md
-│       ├── 14-ai-assistant-and-central-chat.md
-│       └── 15-us-insurance-agency-and-remote-sales.md
+│       ├── 01-getting-started.md
+│       ├── 02-angular-development-rules.md
+│       └── …
 └── (application source will land here)
 ```
 
@@ -213,8 +231,13 @@ This repository currently holds **product definition**. Implementation (services
 |----------|------------|
 | [docs/requirements/README.md](docs/requirements/README.md) | Spec index, ID prefixes, P0/P1/P2 legend |
 | [docs/requirements/01–15](docs/requirements/) | Implement or review a single module |
+| [docs/database/README.md](docs/database/README.md) | Physical databases, tables, and every column |
+| [docs/plans/README.md](docs/plans/README.md) | **Spiral SDLC plans** — program waves S0–S7 and per-module cycles |
+| [docs/use-cases/README.md](docs/use-cases/README.md) | **Detailed use cases** — actors, flows, and FR traceability for the full app |
+| [docs/developer/README.md](docs/developer/README.md) | **Developer rules** for joiners (Angular + API + DB + Access + Git + testing) |
+| [docs/developer/02-angular-development-rules.md](docs/developer/02-angular-development-rules.md) | Final Angular standards (PR blockers) |
 
-Every requirement file includes: purpose, scope, users, functional requirements with user stories and acceptance criteria, data entities, integrations, security, non-functionals, and dependencies.
+Every requirement file includes: purpose, scope, users, functional requirements with user stories and acceptance criteria, data entities, integrations, security, non-functionals, and dependencies. The database folder turns those entities into MySQL/ClickHouse schemas. The plans folder maps specs into spiral-method delivery. The use-cases folder turns every FR into actor flows for BA/QA/UX. The developer folder is what new engineers read before their first PR.
 
 ---
 

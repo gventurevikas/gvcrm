@@ -4,10 +4,15 @@ This folder contains **independent, implementation-ready requirement specificati
 
 Each module file is self-contained. A team can implement or review one section without reading the others. Cross-module dependencies are listed inside each file.
 
+Physical tables and columns for these entities: [docs/database/README.md](../database/README.md).  
+Spiral SDLC implementation plans (program + per module): [docs/plans/README.md](../plans/README.md).  
+Detailed use cases (actors, flows, FR traceability): [docs/use-cases/README.md](../use-cases/README.md).
+
 ## Document index
 
 | # | Module | File | Prefix |
 |---|--------|------|--------|
+| 00 | Access — Authentication & MFA | [00-access-authentication-and-mfa.md](./00-access-authentication-and-mfa.md) | IAM |
 | 01 | Accounts and Contacts Management | [01-accounts-and-contacts-management.md](./01-accounts-and-contacts-management.md) | ACM |
 | 02 | Customer Communication Management | [02-customer-communication-management.md](./02-customer-communication-management.md) | CCM |
 | 03 | Dashboards and Reports | [03-dashboards-and-reports.md](./03-dashboards-and-reports.md) | DAR |

@@ -1,0 +1,36 @@
+STEP 0
+Journey two walks the full sell path: convert a qualified lead into a household, build the opportunity, and issue a quote.
+
+STEP 1
+The producer marks the lead qualified and runs convert. GVCRM creates the account, contact, and a new-business opportunity in one guided step — keeping source lineage intact.
+
+STEP 2
+We land on the account three-sixty. For insurance, this is typically a household view — people, policies, communications, and deals in one place.
+
+STEP 3
+Household members are confirmed, and homeowners is selected as the line of business. Producer license and state context stay visible for routing quality.
+
+STEP 4
+From the product catalog, the producer adds the right coverage using the agency price book. List price and product name are snapshotted onto the opportunity lines.
+
+STEP 5
+On the Kanban board, the deal moves through discovery stages. Column totals and swimlanes keep pipeline health obvious at a glance.
+
+STEP 6
+A discovery call is scheduled and logged against the opportunity, so the activity timeline stays complete.
+
+STEP 7
+When ready, a quote is generated from the opportunity. Totals are calculated server-side — no client-side tampering — and discounts respect approval thresholds.
+
+STEP 8
+The quote PDF is filed on the record as a document attachment, ready for versioning and secure sharing.
+
+STEP 9
+The producer emails the quote. Open and click tracking confirm engagement, and follow-ups can be scheduled from the same thread.
+
+STEP 10
+When the prospect accepts, GVCRM creates the order or contract draft according to quote-to-cash rules — continuing the path toward bind.
+
+STEP 11
+Journey two complete: lead to household to pipeline to quote — the core insurance sell path.
+

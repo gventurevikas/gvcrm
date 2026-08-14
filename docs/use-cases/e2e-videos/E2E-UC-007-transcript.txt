@@ -1,0 +1,27 @@
+STEP 0
+Journey seven is ask-and-act: the assistant runs business operations as the signed-in user — never as a superuser.
+
+STEP 1
+Central chat opens with optional record context chips, so the assistant already knows where the producer is working.
+
+STEP 2
+The producer says: add a homeowners cross-sell on the Smith household. The assistant previews the exact fields and waits for an explicit confirm.
+
+STEP 3
+After confirm, the opportunity is created under that producer’s ownership and permissions. If they could not create it in the UI, chat cannot either.
+
+STEP 4
+Next request: email them the quote. Risky actions need a clearer confirmation — send is not silent.
+
+STEP 5
+Communication prepares the message through the normal email path, still attributed to the same user.
+
+STEP 6
+Consent and do-not-contact rules still apply. The assistant cannot bypass TCPA any more than a human screen can.
+
+STEP 7
+Finally, audit and explainability: the user can ask what changed, and admins can review every assistant-initiated write.
+
+STEP 8
+Journey seven complete: helpful, powerful, and safely bounded by the user’s own access.
+

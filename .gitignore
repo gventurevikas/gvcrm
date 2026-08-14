@@ -4,6 +4,11 @@ html/
 # Local engineering / architecture docs (not committed)
 docs/dev-docs/
 
+# E2E video TTS venv + build cache
+docs/use-cases/e2e-videos/.tts-venv/
+docs/use-cases/e2e-videos/narrated-build/
+docs/use-cases/e2e-videos/frames/
+
 # OS / editor
 .DS_Store
 Thumbs.db

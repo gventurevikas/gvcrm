@@ -1,0 +1,30 @@
+STEP 0
+Journey five is the morning ritual for remote teams: homepage, conversational reporting, and leaderboards.
+
+STEP 1
+The producer signs in through Access. Session, roles, and entitled modules come from identity — not from each CRM screen reinventing security.
+
+STEP 2
+Homepage loads with what matters today: open leads, renewals due, tasks, alerts, and a leaderboard widget.
+
+STEP 3
+Daily, weekly, and monthly boards are published for the agency. Ranks show aggregates — not peer deal details the viewer should not see.
+
+STEP 4
+From any screen, they open the central ChatGPT-mini assistant — always available, always running as themselves.
+
+STEP 5
+They ask, naturally: show premium bound by producer this month as a bar chart. If details are missing, the assistant asks follow-ups instead of guessing.
+
+STEP 6
+Dashboards and Reports executes the structured spec under the user’s security model, and every run is audited in analytics.
+
+STEP 7
+The chart appears. They can drill in, export, or save the report for the team.
+
+STEP 8
+Insurance KPIs stay aligned across reporting and gamification, so the morning view matches how the agency actually sells.
+
+STEP 9
+Journey five complete: see the day, ask for insight, act with confidence.
+

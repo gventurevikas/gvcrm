@@ -1,0 +1,27 @@
+STEP 0
+Journey eleven hardens the front door: verified registration, SMS codes, and Google Authenticator for a more secure way of working.
+
+STEP 1
+The user activates from invite and verifies email first. Until email is proven, product modules stay closed.
+
+STEP 2
+They verify a mobile number, then enable SMS one-time codes as a second factor — useful for producers in the field.
+
+STEP 3
+For a stronger factor, they enroll Google Authenticator: scan the QR once, confirm a live code, and download recovery codes for break-glass access.
+
+STEP 4
+Security Center now shows the healthier posture — verified email, verified phone, SMS and authenticator on, recovery codes ready.
+
+STEP 5
+Next sign-in starts with email and password as usual — but that is only the first factor when MFA is required.
+
+STEP 6
+The challenge screen asks for the authenticator code — or SMS if that method is enrolled. Password alone never opens the CRM.
+
+STEP 7
+Only after every required factor succeeds does the homepage appear. Admins can require this path org-wide so producers cannot skip it.
+
+STEP 8
+Journey eleven complete: human-friendly security that still feels smooth to use every day.
+

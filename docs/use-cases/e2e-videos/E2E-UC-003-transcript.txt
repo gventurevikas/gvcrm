@@ -1,0 +1,27 @@
+STEP 0
+Journey three is about protecting the book: renewals, rotting alerts, automated outreach, and leaderboard impact.
+
+STEP 1
+A policy is approaching term. GVCRM automatically opens a renewal opportunity on the renewal pipeline and links it back to the household and policy record.
+
+STEP 2
+The account manager reviews premium, term dates, and carrier context on that renewal opportunity.
+
+STEP 3
+If nobody works it, rotting rules highlight the deal. Managers get a clear signal before the renewal slips away.
+
+STEP 4
+Workflow automation kicks in — time-based actions can prepare tasks or emails so renewals do not depend on memory alone.
+
+STEP 5
+A branded renewal template goes out, still consent-checked through Communication, so TCPA and unsubscribe rules are honored.
+
+STEP 6
+When the renewal binds, premium and retention metrics flow into the monthly leaderboard for the agency.
+
+STEP 7
+Insurance KPIs — renewals retained, premium bound, bind ratio — stay first-class for coaching and remote motivation.
+
+STEP 8
+Journey three complete: the book of business stays warm, visible, and competitive.
+

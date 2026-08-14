@@ -1,0 +1,24 @@
+STEP 0
+Journey nine is platform craft: customize in sandbox, enforce with validation, and promote cleanly to production.
+
+STEP 1
+Everything starts in sandbox — an isolated twin of production where experiments are safe.
+
+STEP 2
+The admin adds a custom field the insurance process needs, with field-level security set by profile.
+
+STEP 3
+Layouts are updated so the field appears in the right section for the right roles — not a cluttered dump on every page.
+
+STEP 4
+A validation rule requires line of business on insurance opportunities. The same rule protects UI saves, API calls, and bulk edits.
+
+STEP 5
+A metadata package is reviewed — diff, optional dual control — then deployed to production with rollback retained.
+
+STEP 6
+Reps see the new field immediately. Invalid records cannot save, so process quality improves on day one.
+
+STEP 7
+Journey nine complete: change safely, enforce consistently, ship with confidence.
+

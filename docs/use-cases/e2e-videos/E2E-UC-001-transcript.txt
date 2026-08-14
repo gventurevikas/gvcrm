@@ -1,0 +1,33 @@
+STEP 0
+Welcome to GVCRM. This walkthrough is end-to-end journey one: Meta lead to first touch — how a remote insurance producer responds the moment a paid-social lead arrives.
+
+STEP 1
+It starts on Meta. A prospect submits an Instant Form for auto insurance in Texas. Within seconds, GVCRM ingests the lead with campaign attribution, and the consent snapshot is stored so outreach stays compliant.
+
+STEP 2
+Next, assignment takes over. Routing rules look at state, line of business, and license. Round-robin sends the lead to an eligible Texas producer — or to an inside sales agent if producers are unavailable.
+
+STEP 3
+Our remote producer is not in an office. Their remote workspace queue lights up with the new Meta lead, ready for immediate first touch.
+
+STEP 4
+At the same time, a push and in-app notification fire. Speed-to-lead is the goal here — ideally under fifteen seconds from form submit to awareness.
+
+STEP 5
+Before any call or text, GVCRM checks TCPA and consent. If the org runs in strict mode and consent is missing, outbound contact is blocked — no shortcuts.
+
+STEP 6
+Consent is good, so the producer places the first-touch call directly from CRM. Reminders and call context stay attached to the lead.
+
+STEP 7
+After the conversation, the call is logged and tagged — discovery, transfer, appointment set — so managers can coach from a clean timeline.
+
+STEP 8
+That fast response also feeds gamification. Points and streaks reward the behaviors that win remote teams: speed, activity, and follow-through.
+
+STEP 9
+Finally, daily leaderboards update. Even without an office floor, the team can see who is winning today on speed-to-lead and related insurance metrics.
+
+STEP 10
+That’s journey one complete: real-time Meta lead, smart assignment, compliant first touch, and motivation on the board.
+

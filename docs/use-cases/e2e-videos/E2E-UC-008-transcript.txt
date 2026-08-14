@@ -1,0 +1,24 @@
+STEP 0
+Journey eight covers the platform economy: install a free Marketplace app safely — sandbox first, then production.
+
+STEP 1
+An admin opens the in-product Marketplace and browses trusted listings — connectors, industry packs, and extensions.
+
+STEP 2
+On the listing page they review screenshots, scopes, and publisher details before committing.
+
+STEP 3
+Install begins in sandbox. Production data and passwords stay untouched while the team evaluates the app.
+
+STEP 4
+Scopes are consented explicitly. The admin configures the app, tests critical flows, and confirms the package signature is valid.
+
+STEP 5
+When ready, they promote to production with a clear consent step. Entitlements update so the right modules appear for users.
+
+STEP 6
+Installed apps use scoped OAuth and rate limits. Operators keep a kill switch if something ever looks wrong.
+
+STEP 7
+Journey eight complete: extend GVCRM without compromising the tenant.
+
