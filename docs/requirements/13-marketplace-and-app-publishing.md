@@ -413,6 +413,8 @@ Installed apps shall use documented, scoped APIs.
 4. Rate limits per app per org; visible on API Usage Dashboard.
 5. App events: install, uninstall, license change.
 6. UI extension points (P1): record sidebar widgets, custom tabs, composer actions, portal widgets — declared in the package manifest.
+7. **Complete public documentation** of the Platform API surface in **Scalar** (OpenAPI 3.1, Try-it sandbox, guides, webhook catalog) — see [17-platform-api-documentation-scalar.md](./17-platform-api-documentation-scalar.md) (SCL-FR-*).
+8. Internal realtime bus remains **Kafka** ([16-kafka-messaging-platform.md](./16-kafka-messaging-platform.md)); partners consume **HTTPS webhooks**, not Kafka credentials.
 
 **Acceptance criteria**
 
@@ -420,6 +422,7 @@ Installed apps shall use documented, scoped APIs.
 - Invalid webhook signature is rejected.
 - Hitting rate limit returns 429 with retry-after; usage appears on DAR API dashboard.
 - Uninstall fires app-uninstall event once.
+- Partner can discover and Try-it the same scopes from Scalar without reading Angular source.
 
 ---
 
@@ -495,6 +498,8 @@ Installed apps shall use documented, scoped APIs.
 | Products / Quotes | Commerce connectors; not the same as product portals |
 | Team Collaboration | Optional Slack/Teams apps via marketplace |
 | Accounts and Contacts | Group scheduling and map connector apps |
+| Platform API Documentation (Scalar) | Complete public OpenAPI / Try-it / guides for MKT-FR-014 |
+| Kafka Messaging Platform | Install/kill events on internal bus; partners use webhooks |
 
 ## 16. Traceability
 
@@ -507,5 +512,5 @@ Installed apps shall use documented, scoped APIs.
 | Publisher onboarding | MKT-FR-006 |
 | Package & submit apps | MKT-FR-007, MKT-FR-008, MKT-FR-009 |
 | External marketplace hub | MKT-FR-010, MKT-FR-011, MKT-FR-012, MKT-FR-013 |
-| App runtime APIs | MKT-FR-014 |
+| App runtime APIs | MKT-FR-014 (+ SCL-FR-* documentation portal) |
 | Custom Apps / Custom Modules / Packages (Platform) | PLT-FR-008, PLT-FR-009 (Platform doc) + this module |

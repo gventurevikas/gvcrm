@@ -3,7 +3,8 @@
 **Applies to:** `gvcrm-gateway`, `gvcrm-access-api`, every `gvcrm-*-api`  
 **Stack:** Node.js + TypeScript + Express  
 **Patterns:** Singleton, Factory, Abstract Factory, Builder, Decorator, **Facade**  
-**Public docs:** Partner-facing API reference is published with **Scalar** — see `docs/dev-docs/scalar.md`.
+**Public docs:** Partner-facing API reference is published with **Scalar** — requirements [17-platform-api-documentation-scalar.md](../requirements/17-platform-api-documentation-scalar.md); engineering `docs/dev-docs/scalar.md`.  
+**Realtime bus:** Module APIs publish/subscribe via **Kafka** (`gvcrm-messaging`) — requirements [16-kafka-messaging-platform.md](../requirements/16-kafka-messaging-platform.md); engineering `docs/dev-docs/kafka.md`.
 
 ---
 

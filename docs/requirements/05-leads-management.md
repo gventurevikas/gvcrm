@@ -309,6 +309,8 @@ As a remote insurance producer, I want a Facebook Instant Form or LinkedIn Lead 
 | LED-INT-006 | Campaigns (SPM) | Campaign member → lead |
 | LED-INT-007 | Meta Lead Ads API / webhooks | Real-time Facebook & Instagram Instant Forms |
 | LED-INT-008 | LinkedIn Lead Sync / Lead Gen Forms API | Real-time LinkedIn campaign leads |
+| LED-INT-009 | Kafka messaging (`gvcrm-messaging`) | Ad ingest → assign → notify path; see [16-kafka-messaging-platform.md](./16-kafka-messaging-platform.md) |
+| LED-INT-010 | Scalar Platform API docs | Public LED APIs + webhooks for partners; see [17-platform-api-documentation-scalar.md](./17-platform-api-documentation-scalar.md) |
 
 ## 8. Permissions and security
 
@@ -326,7 +328,7 @@ As a remote insurance producer, I want a Facebook Instant Form or LinkedIn Lead 
 
 | ID | Requirement |
 |----|-------------|
-| LED-NFR-001 | Inbound form → assigned owner notification P95 < 15s (includes Meta and LinkedIn webhook ingest). |
+| LED-NFR-001 | Inbound form → assigned owner notification P95 < 15s (includes Meta and LinkedIn webhook ingest). **Depends on Kafka M1** ([KFK-NFR-001](./16-kafka-messaging-platform.md)). |
 | LED-NFR-002 | Score update P95 < 10s after qualifying activity. |
 | LED-NFR-003 | Import of 10k leads completes with progress feedback; no UI timeout. |
 | LED-NFR-004 | Assignment engine is deterministic and concurrent-safe (no double assign). |
@@ -345,6 +347,8 @@ As a remote insurance producer, I want a Facebook Instant Form or LinkedIn Lead 
 | Platform | Custom fields, layouts, notifications, mobile |
 | Workflows | Score-threshold and assignment side effects |
 | Marketplace | Lead capture apps / form apps |
+| Kafka Messaging Platform | Durable realtime ingest/assign/notify (KFK) |
+| Platform API Documentation (Scalar) | Partner LED REST + webhook docs (SCL) |
 | US Insurance Agency and Remote Sales | State/LOB routing, TCPA, remote agent queue |
 | AI Assistant and Central Chat | “Show my new Meta leads” / claim and log first touch |
 

@@ -40,6 +40,8 @@ Users run **one** Angular app: `gvcrm-web`. Product areas (Leads, Reporting, Acc
 | 8 | Every API response uses the **application JSON envelope**. |
 | 9 | Every list/mutate query filters by **`org_id`**. |
 | 10 | Report runs (any client) write ClickHouse **`report_runs`**. |
+| 11 | Cross-module realtime work uses **Kafka** (`gvcrm-messaging`) — declared topics + envelope; no private clusters ([KFK](../requirements/16-kafka-messaging-platform.md)). |
+| 12 | New **public/partner** gateway routes ship with **OpenAPI** and appear in **Scalar** ([SCL](../requirements/17-platform-api-documentation-scalar.md)). |
 
 ---
 

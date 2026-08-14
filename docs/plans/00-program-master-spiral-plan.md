@@ -125,11 +125,12 @@ Spirals **do not** re-write requirements from scratch; they **select, refine ris
 
 - INS P0: org modes, LOBs, households, policies, renewals, remote workspace hooks, TCPA flags
 - LED-FR-008 Meta + LinkedIn real-time ingest (≤15s)
+- **Kafka M0–M1** (`gvcrm-messaging`): Compose + topic registry + SDK + **ad ingest → assign → notify** path ([16-kafka-messaging-platform.md](../requirements/16-kafka-messaging-platform.md))
 - QOC P0 quotes (+ order/contract/invoice basics as capacity allows)
 
-**Exit criteria:** Ad lead lands → assigned producer notified → household/policy → quote PDF.
+**Exit criteria:** Ad lead lands → assigned producer notified → household/policy → quote PDF; Kafka smoke + LED vertical path live.
 
-**Plans:** INS, LED (ingest spiral), QOC
+**Plans:** INS, LED (ingest spiral), QOC, KFK (M0–M1)
 
 ---
 
@@ -164,11 +165,13 @@ Spirals **do not** re-write requirements from scratch; they **select, refine ris
 **Objectives**
 
 - MKT MVP: free apps, package from PLT, sandbox→prod install, OAuth scopes, kill switch
+- **Scalar D0–D3** (`gvcrm-api-docs`): OpenAPI aggregator + portal for Auth/Leads/Accounts/Opportunities + webhooks/OAuth docs ([17-platform-api-documentation-scalar.md](../requirements/17-platform-api-documentation-scalar.md)); aligns with MKT-FR-014
+- Kafka M2+ as capacity allows (notifications, `report_runs`, WPA, SPM)
 - v1 polish: SMS analytics, portals, paid licensing, external listing workspace, assistant send email/SMS, NPN reminders
 
-**Exit criteria:** Install free app in sandbox then prod; external listing draft pack exportable.
+**Exit criteria:** Install free app in sandbox then prod; external listing draft pack exportable; partner can Try-it sandbox `GET /v1/led/leads` from Scalar.
 
-**Plans:** MKT + delta spirals on CCM, PRD, AIA, INS
+**Plans:** MKT + SCL + delta spirals on CCM, PRD, AIA, INS, KFK
 
 ---
 
@@ -180,6 +183,8 @@ Spirals **do not** re-write requirements from scratch; they **select, refine ris
 | RBAC / FLS / sharing | IAM + PLT |
 | Consent / TCPA / DNC | CCM SoR; INS `tcpa_strict`; LED snapshots |
 | Audit lanes | IAM audit, PLT record audit, CH `report_runs` |
+| Realtime messaging | Kafka (`gvcrm-messaging`) — KFK requirements; required for Meta/LinkedIn SLA |
+| Partner API docs | Scalar (`gvcrm-api-docs`) — SCL requirements; documents MKT-FR-014 |
 | Testing | `docs/developer/testing-rules.md` |
 | Git / PR | `docs/developer/git-pr-review.md` |
 

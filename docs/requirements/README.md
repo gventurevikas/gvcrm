@@ -28,6 +28,8 @@ Detailed use cases (actors, flows, FR traceability): [docs/use-cases/README.md](
 | 13 | Marketplace and App Publishing | [13-marketplace-and-app-publishing.md](./13-marketplace-and-app-publishing.md) | MKT |
 | 14 | AI Assistant and Central Chat | [14-ai-assistant-and-central-chat.md](./14-ai-assistant-and-central-chat.md) | AIA |
 | 15 | US Insurance Agency and Remote Sales | [15-us-insurance-agency-and-remote-sales.md](./15-us-insurance-agency-and-remote-sales.md) | INS |
+| 16 | Kafka Messaging Platform | [16-kafka-messaging-platform.md](./16-kafka-messaging-platform.md) | KFK |
+| 17 | Platform API Documentation (Scalar) | [17-platform-api-documentation-scalar.md](./17-platform-api-documentation-scalar.md) | SCL |
 
 ## How to read each file
 
@@ -82,3 +84,5 @@ These apply across modules and are specified in detail inside Platform, Workflow
 - US insurance agency / carrier orientation for remote sales producers
 - Real-time Meta and LinkedIn campaign leads
 - Complete gamification with published daily, weekly, and monthly leaderboards
+- **Kafka messaging** for durable realtime events across independent module APIs ([16](./16-kafka-messaging-platform.md))
+- **Scalar OpenAPI portal** so ISVs build on GVCRM like Salesforce / HubSpot / Zoho ([17](./17-platform-api-documentation-scalar.md))

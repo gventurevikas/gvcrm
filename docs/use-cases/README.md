@@ -44,6 +44,8 @@ This folder contains **detailed use cases** for the complete GVCRM application, 
 | [13-marketplace-publishing-use-cases.md](./13-marketplace-publishing-use-cases.md) | MKT-FR-001…014 |
 | [14-ai-assistant-central-chat-use-cases.md](./14-ai-assistant-central-chat-use-cases.md) | AIA-FR-001…009 |
 | [15-us-insurance-remote-sales-use-cases.md](./15-us-insurance-remote-sales-use-cases.md) | INS-FR-001…007 |
+| [16-kafka-messaging-use-cases.md](./16-kafka-messaging-use-cases.md) | KFK-FR-001…014 (+ NFR/SEC via UCs) |
+| [17-platform-api-documentation-use-cases.md](./17-platform-api-documentation-use-cases.md) | SCL-FR-001…016 (+ NFR/SEC via UCs) |
 | [mock-screens/](./mock-screens/README.md) | **135 UI mock images** (one per product use case) |
 
 ---
@@ -68,8 +70,11 @@ This folder contains **detailed use cases** for the complete GVCRM application, 
 | MKT | 14 | `13-…` |
 | AIA | 9 | `14-…` |
 | INS | 7 | `15-…` |
+| Kafka messaging | 14 KFK FRs | `16-…` |
+| Platform API docs (Scalar) | 16 SCL FRs | `17-…` |
 | **Product CRM FRs** | **135** | |
-| **Access IAM FRs** | **15** | Plus 10 E2E journeys |
+| **Access IAM FRs** | **15** | |
+| **Platform infra FRs** | **30** (KFK+SCL) | Plus 10 E2E journeys |
 
 ---
 

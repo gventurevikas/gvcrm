@@ -49,6 +49,13 @@ Rules:
 | [14-ai-assistant-central-chat-spiral-plan.md](./14-ai-assistant-central-chat-spiral-plan.md) | AIA |
 | [15-us-insurance-remote-sales-spiral-plan.md](./15-us-insurance-remote-sales-spiral-plan.md) | INS |
 
+**Platform infra requirements (no separate spiral file yet — tracked in master waves + requirements):**
+
+| Spec | Prefix | Waves |
+|------|--------|-------|
+| [16-kafka-messaging-platform.md](../requirements/16-kafka-messaging-platform.md) | KFK | S4 (M0–M1), then M2+ with S5–S7 |
+| [17-platform-api-documentation-scalar.md](../requirements/17-platform-api-documentation-scalar.md) | SCL | S7 (D0–D3), expand with module releases |
+
 ---
 
 ## Program wave map (summary)
@@ -59,10 +66,10 @@ Rules:
 | **S1** | Metadata + party model | PLT (thin) + ACM |
 | **S2** | Pipeline core | LED + ODM + PRD (catalog) |
 | **S3** | Engage + automate | CCM (P0) + WPA + DOC (thin) |
-| **S4** | Insurance vertical MVP | INS + LED Meta/LinkedIn + QOC quotes |
+| **S4** | Insurance vertical MVP | INS + LED Meta/LinkedIn + QOC quotes + **Kafka M0–M1** |
 | **S5** | Visibility & motivation | DAR + SPM (D/W/M boards) |
 | **S6** | Collaboration & assistant | TCL + AIA MVP |
-| **S7** | Platform economy / v1 | MKT + polish (SMS analytics, portals, paid apps) |
+| **S7** | Platform economy / v1 | MKT + **Scalar D0–D3** + polish (SMS analytics, portals, paid apps) |
 
 Waves may overlap once Facades and contracts exist; **S0 is a hard gate**.
 

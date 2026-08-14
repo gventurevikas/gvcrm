@@ -98,6 +98,8 @@ Each module has its own requirement file. Specs are independent so a team can im
 | **Marketplace & Publishing** | In-app store, publisher portal, external marketplace hub | [13](docs/requirements/13-marketplace-and-app-publishing.md) |
 | **AI Assistant & Central Chat** | ChatGPT-mini system assistant: help, business operations, conversational custom reports | [14](docs/requirements/14-ai-assistant-and-central-chat.md) |
 | **US Insurance & Remote Sales** | Agency/carrier orientation, households, LOBs, book of business, remote workspace, US compliance | [15](docs/requirements/15-us-insurance-agency-and-remote-sales.md) |
+| **Kafka Messaging** | Independent realtime bus: lead ingest, notifications, workflows, gamification, `report_runs` | [16](docs/requirements/16-kafka-messaging-platform.md) |
+| **Platform API Docs (Scalar)** | Public OpenAPI portal so ISVs build like Salesforce / HubSpot / Zoho | [17](docs/requirements/17-platform-api-documentation-scalar.md) |
 
 Full index, ID convention, and priority legend: [docs/requirements/README.md](docs/requirements/README.md).
 
@@ -196,7 +198,9 @@ gvcrm/
 │   │   ├── README.md
 │   │   ├── 01-accounts-and-contacts-management.md
 │   │   ├── …
-│   │   └── 15-us-insurance-agency-and-remote-sales.md
+│   │   ├── 15-us-insurance-agency-and-remote-sales.md
+│   │   ├── 16-kafka-messaging-platform.md
+│   │   └── 17-platform-api-documentation-scalar.md
 │   ├── database/                      ← MySQL + ClickHouse table/field plan
 │   │   ├── README.md
 │   │   ├── 00-conventions.md
@@ -212,7 +216,7 @@ gvcrm/
 │   │   ├── 00-actors-and-conventions.md
 │   │   ├── 00-access-and-session-use-cases.md
 │   │   ├── 00-end-to-end-journeys.md
-│   │   └── 01–15 module use cases
+│   │   └── 01–17 module use cases
 │   └── developer/                     ← join-ready developer rules (Angular + platform)
 │       ├── README.md
 │       ├── 01-getting-started.md
@@ -230,7 +234,7 @@ This repository currently holds **product definition**. Implementation (services
 | Document | Use it for |
 |----------|------------|
 | [docs/requirements/README.md](docs/requirements/README.md) | Spec index, ID prefixes, P0/P1/P2 legend |
-| [docs/requirements/01–15](docs/requirements/) | Implement or review a single module |
+| [docs/requirements/01–17](docs/requirements/) | Implement or review a single module (incl. Kafka + Scalar) |
 | [docs/database/README.md](docs/database/README.md) | Physical databases, tables, and every column |
 | [docs/plans/README.md](docs/plans/README.md) | **Spiral SDLC plans** — program waves S0–S7 and per-module cycles |
 | [docs/use-cases/README.md](docs/use-cases/README.md) | **Detailed use cases** — actors, flows, and FR traceability for the full app |
