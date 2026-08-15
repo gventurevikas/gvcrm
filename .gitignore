@@ -15,3 +15,6 @@ Thumbs.db
 *.swp
 .idea/
 .vscode/
+
+# Oversized archive (individual PNGs are committed under mock-screens/)
+docs/use-cases/mock-screens.zip
