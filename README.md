@@ -1,4 +1,4 @@
-# GVCRM
+# Gventure Insurance CRM
 
 **CRM for US insurance agencies and insurance companies — built for remote, sales-first producers.**
 
